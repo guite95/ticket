@@ -3,6 +3,9 @@ package com.study.ticket.domain.service;
 import com.study.ticket.domain.dto.request.ChargePointRequest;
 import com.study.ticket.domain.dto.request.PaymentRequest;
 import com.study.ticket.domain.dto.request.ReserveSeatRequest;
+import com.study.ticket.domain.dto.response.ConcertListResponse;
+import com.study.ticket.domain.dto.response.ConcertOptionListResponse;
+import com.study.ticket.domain.dto.response.SeatListResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +17,7 @@ public class TicketingService {
      * 콘서트 목록을 조회하는 메서드
      * @return
      */
-    public String getConcerts() {
+    public ConcertListResponse getConcerts() {
         return null;
     }
 
@@ -23,7 +26,7 @@ public class TicketingService {
      * @param concertId
      * @return
      */
-    public String getConcertOptions(Long concertId) {
+    public ConcertOptionListResponse getConcertOptions(Long concertId) {
         return null;
     }
 
@@ -32,7 +35,7 @@ public class TicketingService {
      * @param concertOptionId
      * @return
      */
-    public String getAvailableSeats(Long concertOptionId) {
+    public SeatListResponse getAvailableSeats(Long concertOptionId) {
         return null;
     }
 
@@ -41,7 +44,7 @@ public class TicketingService {
      * @param userId
      * @return
      */
-    public String getReservedSeats(Long userId) {
+    public SeatListResponse getReservedSeats(Long userId) {
         return null;
     }
 
@@ -69,7 +72,7 @@ public class TicketingService {
      * @param request
      * @return
      */
-    public String chargePoint(ChargePointRequest request) {
+    public Long chargePoint(ChargePointRequest request) {
         return null;
     }
 }

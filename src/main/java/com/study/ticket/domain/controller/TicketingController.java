@@ -3,6 +3,10 @@ package com.study.ticket.domain.controller;
 import com.study.ticket.domain.dto.request.ChargePointRequest;
 import com.study.ticket.domain.dto.request.PaymentRequest;
 import com.study.ticket.domain.dto.request.ReserveSeatRequest;
+import com.study.ticket.domain.dto.response.ConcertListResponse;
+import com.study.ticket.domain.dto.response.ConcertOptionListResponse;
+import com.study.ticket.domain.dto.response.SeatListResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,7 +18,7 @@ public class TicketingController {
      * @return
      */
     @GetMapping("/concerts")
-    public String getConcerts() {
+    public ResponseEntity<ConcertListResponse> getConcerts() {
         return null;
     }
 
@@ -23,7 +27,7 @@ public class TicketingController {
      * @return
      */
     @GetMapping("/concerts/{concertId}/options")
-    public String getConcertOptions(@PathVariable Long concertId) {
+    public ResponseEntity<ConcertOptionListResponse> getConcertOptions(@PathVariable Long concertId) {
         return null;
     }
 
@@ -33,7 +37,7 @@ public class TicketingController {
      * @return
      */
     @GetMapping("/concerts/options/{concertOptionId}/seats")
-    public String getAvailableSeats(@PathVariable Long concertOptionId) {
+    public ResponseEntity<SeatListResponse> getAvailableSeats(@PathVariable Long concertOptionId) {
         return null;
     }
 
@@ -43,7 +47,7 @@ public class TicketingController {
      * @return
      */
     @GetMapping("/user/{userId}/reservations")
-    public String getReservedSeats(@PathVariable Long userId) {
+    public ResponseEntity<SeatListResponse> getReservedSeats(@PathVariable Long userId) {
         return null;
     }
 
@@ -53,7 +57,7 @@ public class TicketingController {
      * @return
      */
     @PostMapping("/reservations")
-    public String reserveSeat(@RequestBody ReserveSeatRequest request) {
+    public ResponseEntity<String> reserveSeat(@RequestBody ReserveSeatRequest request) {
         return null;
     }
 
@@ -63,7 +67,7 @@ public class TicketingController {
      * @return
      */
     @PostMapping("/payments")
-    public String payment(@RequestBody PaymentRequest request) {
+    public ResponseEntity<String> payment(@RequestBody PaymentRequest request) {
         return null;
     }
 
@@ -73,7 +77,7 @@ public class TicketingController {
      * @return
      */
     @PostMapping("/point/charge")
-    public String chargePoint(@RequestBody ChargePointRequest request) {
+    public ResponseEntity<Long> chargePoint(@RequestBody ChargePointRequest request) {
         return null;
     }
 }
