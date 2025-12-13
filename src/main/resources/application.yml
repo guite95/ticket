@@ -1,1 +1,26 @@
-spring.application.name=ticket
+spring:
+  application:
+    name: ticket
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # ★ 핵심: docker-compose에서 매핑한 3307 포트로 접속합니다.
+    url: jdbc:mysql://localhost:3307/ticket?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+
+    # docker-compose.yml에 설정한 계정 정보와 일치해야 합니다.
+    # (주의: 실무에서는 민감 정보를 환경변수나 Secret Manager로 관리해야 합니다. 이건 스터디용!)
+    username: user
+    password: user1234
+
+  jpa:
+    hibernate:
+      # 개발 초기 단계이므로 엔티티 변경 사항을 테이블에 자동 반영 (create, update, validate, none)
+      ddl-auto: update
+    # 실행되는 SQL 쿼리를 콘솔에 출력 (디버깅용)
+    show-sql: true
+    properties:
+      hibernate:
+        # SQL을 보기 좋게 정렬해서 출력
+        format_sql: true
+        # 주석도 같이 보여줌
+        use_sql_comments: true
