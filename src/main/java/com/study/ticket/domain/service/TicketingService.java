@@ -6,12 +6,19 @@ import com.study.ticket.domain.dto.request.ReserveSeatRequest;
 import com.study.ticket.domain.dto.response.ConcertListResponse;
 import com.study.ticket.domain.dto.response.ConcertOptionListResponse;
 import com.study.ticket.domain.dto.response.SeatListResponse;
+import com.study.ticket.domain.repository.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class TicketingService {
+
+    private final ConcertRepository concertRepository;
+    private final ConcertOptionRepository concertOptionRepository;
+    private final ReservationRepository reservationRepository;
+    private final SeatRepository seatRepository;
+    private final UserRepository userRepository;
 
     /**
      * 콘서트 목록을 조회하는 메서드
